@@ -1,0 +1,42 @@
+body{
+    background-color: lightgray;
+}
+
+h1{
+    font-family: Verdana;
+    color: white;
+    background-color: black;
+    padding: 10px;
+}
+
+
+a{
+    font-family: "Georgia";
+}
+
+.def{
+    font-family: Verdana;
+    color: black
+}
+
+#bio{
+    color: red;
+    background-color: darkgray;
+    width: 20%;
+}
+
+#schooling{
+    color: lime;
+    background-color: darkgray;
+    width: 20%;
+}
+
+#hobbies{
+    color: blue;
+    background-color: darkgray;
+    width: 20%;
+}
+
+#petitionimg{
+    padding-top: 5px;
+}
