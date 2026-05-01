@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Luca Dias">
+    <title>W6 homework</title>
+</head>
+<body>
+    <button onclick="main()">Start</button>
+</body>
+
+<script>
+
+    function main() {
+        var money   = Number(prompt("What is your hourly pay?"))
+        var hours   = Number(prompt("How many hours do you work per week?"))
+        var tax     = Number(prompt("What is the tax rate percentage?"))
+
+        var money2weeks = (money * hours) * 2
+        var tax2weeks   = money2weeks * (tax * .01)
+        var gross       = money2weeks - tax2weeks
+        
+        console.log("Gross Pay: $" + money2weeks)
+        console.log("Uncle Sam's Share: $" + tax2weeks)
+        console.log("Net Pay: $" + gross)
+
+        alert("Gross Pay: $" + money2weeks + "\nUncle Sam's Share: $" + tax2weeks + "\nNet Pay: $" + gross)
+    }    
+
+
+</script>
+</html>
