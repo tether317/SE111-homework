@@ -7,7 +7,9 @@
     <title>W6 homework</title>
 </head>
 <body>
-    <button onclick="main()">Start</button>
+    <h1>2-Week Pay Calculator</h1>
+    <button onclick="main()">START</button> <label style="padding-left: 10px;" for="usealert">Alert output</label> <input type="checkbox" id="usealert" name="uselaert" checked>
+    <p id="info">Output will appear here</p>
 </body>
 
 <script>
@@ -17,15 +19,26 @@
         var hours   = Number(prompt("How many hours do you work per week?"))
         var tax     = Number(prompt("What is the tax rate percentage?"))
 
+        // reject bad inputs
+        if (isNaN(money) || isNaN(hours) || isNaN(tax)) {
+            var emsg = "Error: One or more user inputs was not a number."
+            console.log(emsg)
+            if (document.getElementById("usealert").checked) {alert(emsg)}
+            document.getElementById("info").innerHTML=emsg
+            return false
+        }
+
         var money2weeks = (money * hours) * 2
         var tax2weeks   = money2weeks * (tax * .01)
         var gross       = money2weeks - tax2weeks
-        
+
         console.log("Gross Pay: $" + money2weeks)
         console.log("Uncle Sam's Share: $" + tax2weeks)
         console.log("Net Pay: $" + gross)
 
-        alert("Gross Pay: $" + money2weeks + "\nUncle Sam's Share: $" + tax2weeks + "\nNet Pay: $" + gross)
+        document.getElementById("info").innerHTML="Gross Pay: $" + money2weeks + "<br>Uncle Sam's Share: $" + tax2weeks + "<br>Net Pay: $" + gross
+        if (document.getElementById("usealert").checked) {alert("Gross Pay: $" + money2weeks + "\nUncle Sam's Share: $" + tax2weeks + "\nNet Pay: $" + gross)}
+        
     }    
 
 
